@@ -44,4 +44,15 @@ for p in matlot_pickles:
 # for p in mcf_pickles:
 #     mcf_results.extend(pickle.load(open(mcf_path + p, 'rb')))
 
-
+all_results = batch2_results #+ batch2_results + matlot_results
+score = [0] * 100
+print(len(score))
+i = 0
+for result in all_results:
+    print(result)
+    if len(result) == 3 and result[2] == 1.0:
+        score[i] = 1
+    i = (i+1) % 100
+print(len(all_results))
+print(sum(score))
+print(score)
